@@ -35,16 +35,16 @@ const FlightForm: React.FC = () => {
       const response = await fetch('/api/flights', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(flight)
+        body: JSON.stringify(flight),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to submit flight data');
+        const errorText = await response.text();
+        throw new Error(`Failed to submit flight data: ${errorText}`);
       }
 
-      // Clear form or handle successful submission
       setFlight({
         flight_number: '',
         origin: '',
@@ -173,7 +173,7 @@ const FlightForm: React.FC = () => {
         .form-group input {
           width: 100%;
           padding: 10px;
-          color:black;
+          color: black;
           border: 1px solid #cccccc;
           border-radius: 4px;
           box-sizing: border-box;
