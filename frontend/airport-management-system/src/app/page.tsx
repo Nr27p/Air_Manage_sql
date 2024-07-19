@@ -1,14 +1,58 @@
-import React from 'react';
+// import React from 'react';
 
-// import FlightList from '../components/FlightList';
+// // import FlightList from '../components/FlightList';
+// import FlightForm from '../../components/FlightsForm';
+// import FlightList from '../../components/FlightList';
+// import Navbar from '../../components/Navbar';
+
+// const HomePage: React.FC = () => {
+//   return (
+//     <div>
+//       <h1>Flight Management</h1>
+//       <Navbar />
+//       <FlightForm />
+//       <FlightList />
+      
+//     </div>
+//   );
+// };
+
+// export default HomePage;
+
+'use client';
+
+import React, { useState } from 'react';
 import FlightForm from '../../components/FlightsForm';
 import FlightList from '../../components/FlightList';
-import Navbar from '../../components/Navbar';
+
 import SignUp from '../../pages/signup';
 import Booking from '../../pages/booking';
 
-const HomePage: React.FC = () => {
+const Page: React.FC = () => {
+  const [refresh, setRefresh] = useState<boolean>(false);
+
+  const refreshFlightList = () => {
+    setRefresh((prev) => !prev);
+  };
+
   return (
+    <div className="page-container">
+      <h1 className="page-title">Airport Management System</h1>
+      <FlightForm onFlightAdded={refreshFlightList} />
+      <FlightList refresh={refresh} />
+
+      <style jsx>{`
+        .page-container {
+          padding: 20px;
+        }
+
+        .page-title {
+          text-align: center;
+          margin-bottom: 20px;
+          font-size: 28px;
+          font-weight: 700;
+        }
+      `}</style>
     <div>
       <h1>Flight Management</h1>
       {/* <Navbar /> */}
@@ -21,18 +65,4 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
-// import React from 'react';
-// import Layout from './layout'; // Ensure the path is correct
-
-// function App({ Component, pageProps }: { Component: React.ComponentType; pageProps: any }) {
-//   return (
-//     <Layout>
-//       <Component {...pageProps} />
-//     </Layout>
-//   );
-// }
-
-// export default App;
-
-
+export default Page;
