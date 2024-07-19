@@ -4,14 +4,18 @@ import React from 'react';
 import FlightForm from '../../components/FlightsForm';
 import FlightList from '../../components/FlightList';
 import Navbar from '../../components/Navbar';
+import SignUp from '../../pages/signup';
+import Booking from '../../pages/booking';
 
 const HomePage: React.FC = () => {
   return (
     <div>
       <h1>Flight Management</h1>
-      <Navbar />
-      <FlightForm />
-      <FlightList />
+      {/* <Navbar /> */}
+      {/* <FlightForm /> */}
+      {/* <FlightList /> */}
+      {/* <SignUp /> */}
+      <Booking />
       
     </div>
   );
