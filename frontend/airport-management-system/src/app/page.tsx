@@ -24,7 +24,7 @@
 import React, { useState } from 'react';
 import FlightForm from '../../components/FlightsForm';
 import FlightList from '../../components/FlightList';
-
+import Navbar from '../../components/Navbar';
 import SignUp from '../../pages/signup';
 import Booking from '../../pages/booking';
 
@@ -38,8 +38,11 @@ const Page: React.FC = () => {
   return (
     <div className="page-container">
       <h1 className="page-title">Airport Management System</h1>
+      <Navbar />
       <FlightForm onFlightAdded={refreshFlightList} />
       <FlightList refresh={refresh} />
+      <SignUp />
+      <Booking />
 
       <style jsx>{`
         .page-container {
@@ -53,16 +56,8 @@ const Page: React.FC = () => {
           font-weight: 700;
         }
       `}</style>
-    <div>
-      <h1>Flight Management</h1>
-      {/* <Navbar /> */}
-      {/* <FlightForm /> */}
-      {/* <FlightList /> */}
-      {/* <SignUp /> */}
-      <Booking />
-      
     </div>
   );
-};
+}
 
 export default Page;
