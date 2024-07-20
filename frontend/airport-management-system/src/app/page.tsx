@@ -20,7 +20,7 @@ const Page: React.FC = () => {
     <div className="page-container">
       <h1 className="page-title">Airport Management System</h1>
       <Navbar />
-      <FlightForm onFlightAdded={refreshFlightList} />
+      {/* <FlightForm onFlightAdded={refreshFlightList} /> */}
       <FlightList refresh={refresh} />
       <SignUp />
       <Booking />
