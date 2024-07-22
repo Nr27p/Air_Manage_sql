@@ -3,11 +3,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import FlightForm from '../../components/FlightsForm';
-import FlightList from '../../components/FlightList';
-import Navbar from '../../components/Navbar';
-import SignUp from '../../pages/signup';
-import Booking from '../../pages/booking';
+// import FlightForm from '../../components/FlightsForm';
+// import FlightList from '../../components/FlightList';
+// import Navbar from '../../components/Navbar';
+// import SignUp from '../../pages/signup';
+// import Booking from '../../pages/booking';
+import Home from '../../pages/home';
 
 const Page: React.FC = () => {
   const [refresh, setRefresh] = useState<boolean>(false);
@@ -17,15 +18,16 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div className="page-container">
-      <h1 className="page-title">Airport Management System</h1>
-      <Navbar />
+    <div className='p-20 bg-slate-300 min-h-screen'>
+      {/* <h1 className="page-title">Airport Management System</h1> */}
+      {/* <Navbar /> */}
       {/* <FlightForm onFlightAdded={refreshFlightList} /> */}
-      <FlightList refresh={refresh} />
-      <SignUp />
-      <Booking />
+      {/* <FlightList refresh={refresh} /> */}
+      {/* <SignUp /> */}
+      {/* <Booking /> */}
+      <Home />
 
-      <style jsx>{`
+      {/* <style jsx>{`
         .page-container {
           padding: 20px;
         }
@@ -36,7 +38,7 @@ const Page: React.FC = () => {
           font-size: 28px;
           font-weight: 700;
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 }

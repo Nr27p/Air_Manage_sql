@@ -70,7 +70,7 @@ interface Flight {
     status: string;
 }
 
-const Home: React.FC = () => {
+const Flight: React.FC = () => {
     const [flights, setFlights] = useState<Flight[]>([]);
 
     useEffect(() => {
@@ -94,4 +94,4 @@ const Home: React.FC = () => {
     );
 }
 
-export default Home;
+export default Flight;
