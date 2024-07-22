@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { text } from 'stream/consumers';
+import "../styles/globals.css";
 
 const SignUp = () => {
   const router = useRouter();
@@ -24,85 +25,73 @@ const SignUp = () => {
     });
 
     if (response.ok) {
-      router.push('/'); // Redirect to a welcome page after successful signup
+      // router.push('/'); // Redirect to a welcome page after successful signup
+      router.push('/signin'); // Redirect to a welcome page after successful signup
     } else {
       console.error('Failed to sign up');
     }
   };
 
   return (
-    <div style={styles.container}>
-      <form onSubmit={handleSubmit} style={{color:"black"}}>
-        <h2 style={styles.heading}>Sign Up</h2>
-        <div style={styles.formGroup}>
-          <label style={styles.label}>First Name:</label>
-          <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} style={styles.input} required />
+    <div className="flex justify-center items-center h-screen bg-gray-100 ">
+      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md w-96">
+        <h2 className="mb-5 text-2xl">Sign Up</h2>
+        <hr/>
+        <div className="mb-4 text-left mt-2">
+          <label className="block mb-1">First Name:</label>
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded"
+            required
+          />
         </div>
-        <div style={styles.formGroup}>
-          <label style={styles.label}>Last Name:</label>
-          <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} style={styles.input} required />
+        <div className="mb-4 text-left">
+          <label className="block mb-1">Last Name:</label>
+          <input
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded"
+            required
+          />
         </div>
-        <div style={styles.formGroup}>
-          <label style={styles.label}>Email:</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} style={styles.input} required />
+        <div className="mb-4 text-left">
+          <label className="block mb-1">Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded"
+            required
+          />
         </div>
-        <div style={styles.formGroup}>
-          <label style={styles.label}>Password:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} style={styles.input} required />
+        <div className="mb-4 text-left">
+          <label className="block mb-1">Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded"
+            required
+          />
         </div>
-        <div style={styles.formGroup}>
-          <label style={styles.label}>Phone Number:</label>
-          <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} style={styles.input} />
+        <div className="mb-4 text-left">
+          <label className="block mb-1">Phone Number:</label>
+          <input
+            type="text"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded"
+          />
         </div>
-        <button type="submit" style={styles.button}>Sign Up</button>
+        <button type="submit" className="w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+          Sign Up
+        </button>
       </form>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-    backgroundColor: '#f0f2f5',
-  },
-  form: {
-    backgroundColor: 'white',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-    width: '300px',
-    textAlign: 'center' as const,
-  },
-  heading: {
-    marginBottom: '20px',
-    fontSize: '24px',
-  },
-  formGroup: {
-    marginBottom: '15px',
-    textAlign: 'left' as const,
-  },
-  label: {
-    display: 'block',
-    marginBottom: '5px',
-  },
-  input: {
-    width: '100%',
-    padding: '10px',
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-  },
-  button: {
-    width: '100%',
-    padding: '10px',
-    backgroundColor: '#0070f3',
-    color: 'white',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer',
-  },
 };
 
 export default SignUp;
