@@ -16,28 +16,9 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div className='p-20 bg-slate-300 min-h-screen'>
-      {/* <h1 className="page-title">Airport Management System</h1> */}
-      {/* <Navbar /> */}
-      {/* <FlightForm onFlightAdded={refreshFlightList} /> */}
-      {/* <FlightList refresh={refresh} /> */}
-      {/* <SignUp /> */}
-      {/* <Booking /> */}
-      <Home />
+    <Home />
 
-      {/* <style jsx>{`
-        .page-container {
-          padding: 20px;
-        }
 
-        .page-title {
-          text-align: center;
-          margin-bottom: 20px;
-          font-size: 28px;
-          font-weight: 700;
-        }
-      `}</style> */}
-    </div>
   );
 }
 
