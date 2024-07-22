@@ -113,11 +113,11 @@ interface Flight {
 const Flight: React.FC = () => {
   const [flights, setFlights] = useState<Flight[]>([]);
 
-  useEffect(() => {
-    fetch('/api/flights')
-      .then(response => response.json())
-      .then(data => setFlights(data));
-  }, []);
+//   useEffect(() => {
+//     fetch('/api/flights')
+//       .then(response => response.json())
+//       .then(data => setFlights(data));
+//   }, []);
 
   return (
     <div style={{
@@ -135,7 +135,7 @@ const Flight: React.FC = () => {
         marginBottom: '20px',
       }}>Flights</h1>
       <FlightForm />
-      <div style={{
+      {/* <div style={{
         backgroundColor: 'rgba(0, 0, 0, 0.7)', // Dark semi-transparent background
         borderRadius: '8px',
         padding: '20px',
@@ -154,11 +154,11 @@ const Flight: React.FC = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
       <div style={{
         marginTop: '20px',
       }}>
-        <Link href="/another-page">
+        <Link href="/FlightList">
           Go to Another Page
         </Link>
       </div>
