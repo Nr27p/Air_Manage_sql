@@ -81,21 +81,39 @@
 // components/Navbar.tsx
 import React from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 
-export const Navbar = () => {
+export const Navbar: React.FC = () => {
   return (
-    <nav className="p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-lg font-semibold">Airport Management</div>
-        <div>
-          <Link href="/signin" className=" px-3 py-2 rounded-md text-sm font-medium">
-            Sign In
-          </Link>
-          <Link href="/signup" className="m-7 px-3 py-2 rounded-md text-sm font-medium">
-            Sign Up
-          </Link>
+    <>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <nav style={{ backgroundColor: '#1a202c', padding: '16px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ color: '#fff', fontSize: '24px', fontWeight: '600', fontFamily: 'Montserrat, sans-serif' }}>
+            Airport Management
+          </div>
+          <div style={{ display: 'flex', gap: '16px' }}>
+            <Link href="/signin" legacyBehavior>
+              <a style={{ color: '#fff', padding: '8px 16px', borderRadius: '8px', fontSize: '14px', fontWeight: '500', fontFamily: 'Montserrat, sans-serif', textDecoration: 'none', backgroundColor: '#2d3748', transition: 'background-color 0.3s' }}>
+                Sign In
+              </a>
+            </Link>
+            <Link href="/signup" legacyBehavior>
+              <a style={{ color: '#fff', padding: '8px 16px', borderRadius: '8px', fontSize: '14px', fontWeight: '500', fontFamily: 'Montserrat, sans-serif', textDecoration: 'none', backgroundColor: '#2d3748', transition: 'background-color 0.3s' }}>
+                Sign Up
+              </a>
+            </Link>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
+
+
+
